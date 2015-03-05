@@ -1,2 +1,3 @@
-# modtheme
-Theme for the MoD project
+# MOD
+
+Theme for the MOD2015 project. 
