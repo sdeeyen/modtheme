@@ -731,6 +731,26 @@ a:active {
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+.wrapper{
+	max-width: 60em;
+	padding: 0 2em;
+	margin:0 auto;
+}
+
+.movie-data {
+	background: black;
+	color: white;
+	padding:1em;
+}
+
+.switch a{
+	display: block;
+	padding: .5em 1em;
+	background: hsl(50%,100%, 50%);
+	color: white;
+	border-radius:.5em;
+}
+
 .sticky {
 	display: block;
 }
