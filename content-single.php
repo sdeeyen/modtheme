@@ -11,10 +11,26 @@
 		<div class="entry-meta">
 			<?php mod_posted_on(); ?>
 		</div><!-- .entry-meta -->
+
+		<div class="switch">
+			<a href="#">Trailer</a>
+			<a href="#">Movie</a>
+		</div>
+
 	</header><!-- .entry-header -->
+
+	<div class="the-movie">
+	<!-- the movie goes here -->
+	</div>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
+
+		<div class="artist-statement">
+			<h2>Artist Statement</h2>
+			<p>blah blah</p>
+		</div>
+
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'mod' ),
