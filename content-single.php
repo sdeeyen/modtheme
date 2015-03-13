@@ -30,6 +30,12 @@
 
 		<div class="entry-content">
 			<?php the_content(); ?>
+			<?php
+			// check if post has as post thumbail assigned to it
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail();
+				}
+			?>
 
 			<div class="artist-statement">
 				<h2>Artist Statement</h2>
