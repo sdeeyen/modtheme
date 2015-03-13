@@ -33,7 +33,9 @@
 			<?php
 			// check if post has as post thumbail assigned to it
 				if ( has_post_thumbnail() ) {
+					echo '<figure class="poster">';
 					the_post_thumbnail();
+					echo '</figure>';
 				}
 			?>
 
