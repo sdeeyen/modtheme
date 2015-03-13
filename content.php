@@ -6,19 +6,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title">
-			<?php the_title(); ?>
-			<span class="creator">
-				<?php the_field('first name'); ?>
-			</span>
-		</h1>
-		
-		<!--.entry-meta-->
+		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php mod_posted_on(); ?>
-		</div> 
-		
+		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
