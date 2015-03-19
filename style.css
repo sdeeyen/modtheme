@@ -532,10 +532,6 @@ a:active {
 	padding-left: 0;
 }
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
 
 .main-navigation a {
 	display: block;
@@ -591,15 +587,28 @@ a:active {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+
+.menu-toggle,
+.main-navigation.toggled .nav-menu {
+	display: block;
+}
+
+.main-navigation ul {
+	display: none;
+}
+
+/* Wider screens -> currently breaks at 800px wide */
+@media screen and (min-width: 800px) {
+
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
-		display: block;
+		display: none;
 	}
 
 	.main-navigation ul {
-		display: none;
+		display: block;
 	}
+
 }
 
 .site-main .comment-navigation,
@@ -728,6 +737,68 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+10.1 Header
+--------------------------------------------------------------*/
+
+.site-header {
+	position: relative;
+	background-color: #222;
+	color: white;
+}
+
+.site-header a {
+	color: white;
+	text-decoration: none;
+}
+
+.site-title {
+	margin: .5em 0;
+	text-align: center;
+	font-size: 130%;
+	text-transform: uppercase;
+}
+
+.menu-toggle {
+ 	position: absolute;
+	top: 0;
+	padding: 1em;
+	border: none;
+	background: none;
+	box-shadow: none;
+	text-shadow: none;
+	color: white;
+	font-size: 1em;
+}
+
+.menu-toggle:hover, 
+.menu-toggle:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+
+/* MENU */
+
+ul.nav-menu {
+	padding: 1em;
+}
+
+.nav-menu li a {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-top: 1px solid hsl(0, 0%, 25%);
+	font-size: 1.4em;
+	text-transform: lowercase;
+}
+
+.menu-item-description {
+	font-size: 60%;
+	font-style: italic;
+	color: hsl(0, 0%, 50%);
+}
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
