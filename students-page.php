@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: Student Index
+ *
  * The template for displaying the Students
  */
 
@@ -10,22 +11,39 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			// args
+			// Set up query arguments to find all posts
+			// and order them based on the last name
 			$args = array(
 				'post_type'		=> 'post',
 				'posts_per_page'	=> -1,
 				'meta_key'		=> 'last_name',
-				'orderby'		=> 'meta_value_num',
-				'order'			=> 'DESC'
+				'orderby'		=> 'meta_value',
+				'order'			=> 'ASC'
 			);
 
-			// query
+			// Make query based on the arguments defined above
 			$wp_query = new WP_Query( $args );
 
+			// Set $previous to null before starting to track alphabet letters
+			$previous = null;
 
+			// Run the loop with our custom query
 			while( $wp_query->have_posts() ): $wp_query->the_post(); 
 
-				get_template_part( 'content', 'page' ); 
+				// Get the last name of the current student
+				$last_name = get_field('last_name');
+				// Get the first letter of last name
+				$first_letter = substr($last_name, 0, 1);
+				// If the previous stored first letter does not match above,
+				// add new alphabetical letter.
+			    if ( $previous !== $first_letter ) {
+			    	echo '<div class="alphabet">' . $first_letter . '</div>';
+			    }
+			    // Set $previous to $first_letter to run the test again
+			    $previous = $first_letter;
+
+			    // Output student photo and name
+				get_template_part( 'content', 'student' ); 
 
 			endwhile; // end of the loop. 
 
@@ -34,5 +52,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
