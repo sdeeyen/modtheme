@@ -46,7 +46,7 @@ function mod_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -61,13 +61,6 @@ function mod_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'mod_custom_background_args', array(
@@ -78,23 +71,6 @@ function mod_setup() {
 endif; // mod_setup
 add_action( 'after_setup_theme', 'mod_setup' );
 
-/**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-function mod_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'mod' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'mod_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
