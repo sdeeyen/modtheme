@@ -734,6 +734,8 @@ a:active {
 	display: none;
 }
 
+
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
@@ -832,37 +834,54 @@ ul.nav-menu {
 }
 
 /*--------------------------------------------------------------
-10.2 Asides
+11.0 Layout
 --------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
+
+/* Move header to left side at 900px width using flexbox */
+@media screen and (min-width: 900px) {
+	.site {
+		position: relative;
+		display: flex;
+	}
+
+	.site-header {
+		flex: 0 0 320px;
+		height: 100vh;
+		border-left: 100px solid white;
+	}
+
+	.site-content {
+		flex: 1 1 auto;
+	}
+
+	.site-title {
+		position: fixed;
+		left: 120px;
+		width: 100vh;
+		margin: 0;
+		padding: 0;
+		transform: rotate(90deg);
+		transform-origin: left top 0;
+		font-size: 9vh;
+	}
+
+	.site-title a {
+		color: #222;
+	}
+
+	.main-navigation {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: 100vh;
+	}
+
+	ul.nav-menu {
+		padding: 2em;
+	}
 }
 
-/*--------------------------------------------------------------
-10.3 Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
 
-.bypostauthor {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-11.0 Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
 
 /*--------------------------------------------------------------
 12.0 Media
