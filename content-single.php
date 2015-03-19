@@ -15,7 +15,6 @@
 			<!-- Movie -->
 			<div class="movie-content">
 				<div class="movie-poster">
-					<?php the_content(); ?>
 					<?php
 					// check if post has as post thumbail assigned to it
 						if ( has_post_thumbnail() ) {
@@ -51,9 +50,7 @@
 				        </div><!-- .meta-content -->
 					</header><!-- .entry-header -->
 					<div class="hr"><hr/></div>
-					<p>
-						Cras bibendum dui ipsum, in ultrices elit congue id. In viverra lacus nulla, mattis hendrerit est tincidunt in. Sed tincidunt feugiat mauris vel pulvinar. Praesent velit lorem, iaculis non placerat non, sodales eget arcu. Suspendisse ullamcorper dui quis mi tristique tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ante quam, volutpat bibendum dolor vel, vulputate venenatis nisi. Ut finibus arcu nunc, quis facilisis libero maximus eu. Nam maximus varius facilisis. Integer congue consequat massa eu pulvinar. Suspendisse hendrerit tellus non eleifend porttitor. Praesent rhoncus felis vitae turpis porttitor, quis vestibulum metus ultricies.
-					</p>
+					<p><?php the_content(); ?></p>
 				</div>
 			</div>
 
@@ -61,7 +58,6 @@
 			<div class="artist-content">
 				<!-- Artist Picture -->
 				<div class="artist-picture">
-					<?php the_content(); ?>
 					<?php 
 						$image = get_field('profile_picture');
 						if( !empty($image) ): ?>
