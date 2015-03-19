@@ -756,17 +756,32 @@ a:active {
 }
 .movie-info{
 	display:inline-block;
+	vertical-align:top;
 }
 .movie-poster {
 	max-width:160px;
-	display:inline-block;
 	margin-right:24px;
+	margin-top:12px;
+	display:inline-block;
+	vertical-align:top;
 }
+
+.artist-picture {
+	max-width:160px;
+	margin-right:24px;
+	margin-top:12px;
+	display:inline-block;
+	vertical-align:top;
+}
+
 .artist-statement {
 	max-width:680px;
 	display:inline-block;
+	vertical-align:top;
 }
-
+.hr hr {
+	margin-top:20px;
+}
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
