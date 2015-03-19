@@ -843,7 +843,7 @@ ul.nav-menu {
 		position: relative;
 		display: flex;
 	}
-
+	
 	.site-header {
 		flex: 0 0 320px;
 		height: 100vh;
@@ -853,7 +853,13 @@ ul.nav-menu {
 	.site-content {
 		flex: 1 1 auto;
 	}
+	
+	.persistent {
+		position: fixed;
+		width: 220px;
+		background: #222;
 
+	}
 	.site-title {
 		position: fixed;
 		left: 120px;
