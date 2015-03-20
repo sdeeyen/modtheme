@@ -150,7 +150,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 0;
 }
 
 hr {
@@ -274,6 +274,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
 }
 
 h1,
@@ -728,9 +729,76 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+.embed-container { 
+	position: relative; 
+	padding-bottom: 56.25%; 
+	height: 0; 
+	overflow: hidden; 
+	max-width: 100%; 
+	} 
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+
+.entry-title {
+	margin:0;
+}
+
+.creator {
+	font-size: 0.7em;
+	font-weight: 400;
+}
+.movie-info{
+	display:inline-block;
+	vertical-align:top;
+}
+.movie-poster {
+	max-width:160px;
+	margin-right:24px;
+	margin-top:12px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+.artist-picture {
+	max-width:160px;
+	margin-right:24px;
+	margin-top:12px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+.artist-statement {
+	max-width:680px;
+	display:inline-block;
+	vertical-align:top;
+}
+.hr hr {
+	margin-top:20px;
+}
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+.wrapper{
+	max-width: 960px;
+	padding: 0 2em;
+	margin:auto;
+}
+
+.switch a{
+	display: block;
+	padding: .5em 1em;
+	background: hsl(50%,100%, 50%);
+	color: white;
+	border-radius:.5em;
+}
+
 .sticky {
 	display: block;
 }
