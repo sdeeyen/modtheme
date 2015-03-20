@@ -74,7 +74,7 @@
 				        <div class="meta-content">
 				        	<span class="artist-major">
 				            	<a href="#">
-				            		<?php echo get_the_term_list( $post->ID, 'major', '', ', ' );?>
+				            		<?php echo get_the_category_list( ', ');?>
 				            	</a>
 				            </span> | 
 				            <span class="artist-email">
